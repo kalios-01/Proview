@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger.hilt.android)
 }
 
 android {
@@ -40,6 +42,24 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.lottie.compose) // Latest as of now
+
+    // ViewModel Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+
+    // Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+    
+    // Navigation
+    implementation(libs.navigation.compose)
+
+    //google font
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.7.8")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
